@@ -38,6 +38,6 @@ public class HomePage {
 		assertTrue("Logo is displayed", CommonFunctions.isElementDisplayed(inputPassword));
 	}
 	public void verifySinginButtonDisplayed() {
-		assertFalse("Logo is displayed", CommonFunctions.isElementDisplayed(signInButton));
+		assertTrue("Logo is displayed", CommonFunctions.isElementDisplayed(signInButton));
 	}
 }
