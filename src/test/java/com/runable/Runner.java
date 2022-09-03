@@ -12,9 +12,9 @@ import io.cucumber.junit.CucumberOptions;
 		//plugin= {"pretty","html:target/site/cucumber-pretty/","json:target/cucumber/cucumber-report.json"},
 				 plugin = {
 	                        "pretty",
-	                        "json:target/cucumber-report/cucumber.json",
-	                        "html:target/cucumber-report/cucumber.html"},
-		tags="@homepage",
+	                        "json:target/cucumber.json",
+	                        "html:target/cucumber-html-reports/index.html"},
+		tags="@loginbutton",
 		monochrome = true
 		)
 public class Runner {
