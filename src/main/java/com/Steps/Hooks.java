@@ -30,10 +30,10 @@ public class Hooks {
 		if(scenario.isFailed()) {
 			//File source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 //		     FileHandler.copy(source, new File("QED_Page_Screenshot.png"));
-			//final byte[] screenshot=((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
-			//scenario.attach(screenshot,"image/png", "Errors");
-			String image=((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
-			scenario.attach(image,"image/png", "Errors");
+			final byte[] screenshot=((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+			scenario.attach(screenshot,"image/png", "Errors");
+			//String image=((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
+			//scenario.attach(image,"image/png", "Errors");
 			
 			
 		}
