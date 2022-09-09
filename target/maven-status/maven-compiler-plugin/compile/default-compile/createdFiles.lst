@@ -1,0 +1,5 @@
+com\Utilities\CommonLocator.class
+com\Steps\Hooks.class
+com\Utilities\CommonFunctions.class
+com\UI\Page\HomePage.class
+com\Steps\HomePageSteps.class
