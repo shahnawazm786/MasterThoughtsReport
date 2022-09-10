@@ -1,4 +1,5 @@
 pipeline{
+environment{PATH="C:\Git\bin"}
 	agent any
 	tools
 	{
