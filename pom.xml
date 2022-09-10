@@ -12,7 +12,7 @@
 	<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
     <maven.compile.encoding>UTF-8</maven.compile.encoding>
-    <maven-jar-plugin.version>3.0.0-M7</maven-jar-plugin.version>
+    <maven-jar-plugin.version>3.0.0-M5</maven-jar-plugin.version>
 
 </properties>
 
@@ -24,6 +24,13 @@
     <version>2.8.0</version>
 </dependency>
   -->
+  <dependency>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-clean-plugin</artifactId>
+  <version>3.2.0</version>
+  <type>maven-plugin</type>
+</dependency>
+  
    <dependency>         
       <groupId>net.masterthought</groupId>        
       <artifactId>cucumber-reporting</artifactId>                     
@@ -88,12 +95,18 @@
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
-<dependency>
+<!--<dependency>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-surefire-plugin</artifactId>
     <version>3.0.0-M7</version>
 </dependency>
-
+-->
+<dependency>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-surefire-plugin</artifactId>
+  <version>3.0.0-M5</version>
+  <type>maven-plugin</type>
+</dependency> 
   
   </dependencies>
   
