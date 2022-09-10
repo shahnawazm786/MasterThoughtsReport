@@ -1,15 +1,37 @@
+
 pipeline {
-
-tools{
-    maven 'maven-3.6.3'
-}
-agent  any
-
+agent any
 stages {
-    stage('Maven build') {
-        steps {
-           sh 'mvn clean install'                
-            }
-        }
-    }
+stage('Compile') {
+steps {
+echo 'Compiling..'
+build 'Compile'
+}
+}
+stage('Code_Review') {
+steps {
+echo 'Code Review..'
+build 'Code_Review'
+}
+}
+stage('Test') {
+steps {
+echo 'Testing..'
+build 'Test'
+}
+}
+stage('Build and Deploy') {
+steps {
+echo 'Deploying….'
+build 'Build and Deploy'
+}
+}
+}
+post
+{
+failure
+{
+echo 'Build Failed'
+}
+}
 }
