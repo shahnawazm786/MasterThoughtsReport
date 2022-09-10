@@ -1,21 +1,28 @@
 pipeline {
-         agent any
-         stages {
-                 stage('One') {
-                 steps {
-                     echo 'Hi, welcome to pipeline demo...'
-                 }
-                 }
-                 stage('Two') {
-                 steps {
-                    echo('Sample testing of Stage 2')
-                 }
-                 }
-                 stage('Three') {
-                
-                 steps {
-                       echo 'Thanks for using Jenkins Pipeline'
-                 }
-                 }
-              }
+    agent any
+    tools {
+        maven 'Maven 3.6.3'
+        jdk 'jdk8'
+    }
+    stages {
+        stage ('Initialize') {
+            steps {
+                sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                '''
+            }
+        }
+
+        stage ('Build') {
+            steps {
+                sh 'mvn -Dmaven.test.failure.ignore=true install' 
+            }
+            post {
+                success {
+                    junit 'target/surefire-reports/**/*.xml' 
+                }
+            }
+        }
+    }
 }
