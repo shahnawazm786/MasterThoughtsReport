@@ -1,44 +1,21 @@
-pipeline{
-
-    agent any
-
-    stages {
-
-        stage ('Compile Stage') {
-
-            steps {
-
-                withMaven(maven: 'apache-maven-3.6.3') {
-                    sh 'mvn clean install'
-
-                }
-
-            }
-        }
-    stage ('Test Stage') {
-
-            steps {
-
-                withMaven(maven: 'apache-maven-3.6.3') {
-                    sh 'mvn test'
-
-                }
-
-            }
-        }
-
-
-        stage ('Cucumber Reports') {
-
-            steps {
-                cucumber buildStatus: "UNSTABLE",
-                    fileIncludePattern: "**/cucumber.json",
-                    jsonReportDirectory: 'target'
-
-            }
-
-        }
-
-    }
-
+pipeline {
+         agent any
+         stages {
+                 stage('One') {
+                 steps {
+                     echo 'Hi, welcome to pipeline demo...'
+                 }
+                 }
+                 stage('Two') {
+                 steps {
+                    echo('Sample testing of Stage 2')
+                 }
+                 }
+                 stage('Three') {
+                
+                 steps {
+                       echo 'Thanks for using Jenkins Pipeline'
+                 }
+                 }
+              }
 }
