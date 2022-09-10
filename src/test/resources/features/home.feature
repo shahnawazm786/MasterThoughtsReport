@@ -1,6 +1,6 @@
 #Author: Mohammad Shahnawaz
 #Keywords Summary : Home page link verification
-@homepage
+@homepage @sanity
 Feature: HomePage 
   In this scenario we checked element available on the given page
   @logo

@@ -15,7 +15,7 @@ import io.cucumber.junit.CucumberOptions;
 	                        "pretty",
 	                        "json:target/cucumber.json",
 	                        "html:target/cucumber-html-reports/index.html"},
-		tags="@homepage",
+		tags="@sanity",
 		monochrome = true
 		)
 public class Runner {
