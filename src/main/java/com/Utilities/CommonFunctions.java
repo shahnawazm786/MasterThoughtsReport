@@ -29,9 +29,12 @@ public class CommonFunctions {
 		wait=new WebDriverWait(driver,Duration.ofSeconds(timeout));
 		wait.pollingEvery(Duration.ofMillis(500)).until(ExpectedConditions.elementToBeClickable(element));
 	}
-	public static void isElementVisibile(WebDriver driver,WebElement element,long timeout) {
+	public static boolean isElementVisibile(WebDriver driver,WebElement element,long timeout) {
 		wait=new WebDriverWait(driver,Duration.ofSeconds(timeout));
-		wait.pollingEvery(Duration.ofMillis(500)).until(ExpectedConditions.invisibilityOf(element));
+		return wait.pollingEvery(Duration.ofMillis(500)).until(ExpectedConditions.invisibilityOf(element));
+		
 	}
+	
+	
 
 }
