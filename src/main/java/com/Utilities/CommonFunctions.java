@@ -34,13 +34,29 @@ public class CommonFunctions {
 		return wait.pollingEvery(Duration.ofMillis(500)).until(ExpectedConditions.invisibilityOf(element));
 		
 	}
-	public static void enterText(WebDriver driver,By locator,long timeout) {
+	public static void enterText(WebDriver driver,By locator,long timeout,String text) {
 		wait=new WebDriverWait(driver,Duration.ofSeconds(timeout));
+		wait.until(ExpectedConditions.elementToBeClickable(locator)).sendKeys(text);
 		
 	}
+	public static void enterText(WebDriver driver,By locator,String text) {
+		wait=new WebDriverWait(driver,Duration.ofSeconds(5));
+		wait.until(ExpectedConditions.elementToBeClickable(locator)).sendKeys(text);
+		
+	}
+	
+	
 	public static WebElement presenceOfElementLocated(WebDriver driver,By locator,long timeout) {
 		return new WebDriverWait(driver,Duration.ofSeconds(timeout))
 		.until(ExpectedConditions.presenceOfElementLocated(locator));
 	}
 
+	public static void frameToBeAvailableAndSwitchToIt(WebDriver driver) {
+		new WebDriverWait(driver, Duration.ofSeconds(20))
+		.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(0));
+	}
+	public static void frameToBeAvailableAndSwitchToIt(WebDriver driver,int index) {
+		new WebDriverWait(driver, Duration.ofSeconds(20))
+		.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(index));
+	}
 }
