@@ -34,7 +34,13 @@ public class CommonFunctions {
 		return wait.pollingEvery(Duration.ofMillis(500)).until(ExpectedConditions.invisibilityOf(element));
 		
 	}
-	
-	
+	public static void enterText(WebDriver driver,By locator,long timeout) {
+		wait=new WebDriverWait(driver,Duration.ofSeconds(timeout));
+		
+	}
+	public static WebElement presenceOfElementLocated(WebDriver driver,By locator,long timeout) {
+		return new WebDriverWait(driver,Duration.ofSeconds(timeout))
+		.until(ExpectedConditions.presenceOfElementLocated(locator));
+	}
 
 }
