@@ -60,6 +60,12 @@ public class CommonFunctions {
 		.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(index));
 	}
 	
+	public static void frameToBeAvailableAndSwitchToIt(WebDriver driver,By locator) {
+		new WebDriverWait(driver, Duration.ofSeconds(20))
+		.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(locator));
+	}
+	
+	
 	public static boolean ElementDisplayedAndSelectedAndEnabled(WebDriver driver,By locator,long duration) {
 		return new WebDriverWait(driver, Duration.ofSeconds(duration))
 		.until((WebDriver dr)->dr.findElement(locator).isDisplayed() && 
