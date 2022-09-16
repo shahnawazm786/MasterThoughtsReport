@@ -16,13 +16,17 @@ import io.cucumber.java.Scenario;
 
 public class Hooks {
 	public static WebDriver driver;
+	String siteURL; 
 	@Before
 	public void init() {
 		System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		driver.get("https://www.saucedemo.com/");
+		siteURL=System.getProperty("siteURL");
+		//driver.get("https://www.saucedemo.com/");
+		System.out.println(siteURL);
+		driver.get(siteURL);
 		
 	}
 	@After
